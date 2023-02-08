@@ -13,7 +13,7 @@ elLogOutBtn.addEventListener('click', function () {
 })
 
 if (!localData) {
-  location.replace('register.html')
+  location.replace('login.html')
 }
 
 const renderTodo = (array, node) => {
@@ -64,7 +64,8 @@ elForm.addEventListener('submit', function (evt) {
     .catch(err => console.log(err))
     elInput.value=""
 })
-// https://todo-for-n92.cyclic.app/todos/:id
+
+
 const deleteTodo = (id) => {
   fetch(`https://todo-for-n92.cyclic.app/todos/${id}`, {
     method: 'DELETE',
@@ -90,7 +91,7 @@ const editTodo = (id) => {
       "x-access-token": localData,
     },
     body:
-      JSON.stringify({ text: newValue })
+      JSON.stringify({ task: newValue })
 
   })
     .then(res => res.json())

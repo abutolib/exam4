@@ -49,5 +49,13 @@ elForm.addEventListener('submit', function (evt) {
     }
   })
   .catch((err) => console.log(err)); 
+
+
 })
 
+elForm.addEventListener('click',function(evt){
+  if(evt.target.matches('.register')){
+    location.replace('register.html')
+    // console.log('salom');
+  }
+})
